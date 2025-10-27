@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Roots.trade Event Landing Page',
+  title: 'RULES OF ORIGIN TRADE SOLUTIONS',
   description: 'Join our exclusive event. Register now!',
 };
 
