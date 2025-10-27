@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import AddToCalendar from "@/components/shared/AddToCalendar";
 
 export default function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-image');
@@ -18,9 +19,12 @@ export default function Hero() {
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
                 Únete a nosotros en un evento exclusivo para descubrir estrategias innovadoras, conectar con líderes de la industria y transformar tu negocio.
               </p>
-              <p className="text-accent font-semibold">
-                Fecha: 25 de Diciembre, 2024 | Hora: 10:00 AM | Lugar: Online
-              </p>
+              <div className="space-y-3">
+                <p className="text-accent font-semibold">
+                  Fecha: 25 de Diciembre, 2024 | Hora: 10:00 AM | Lugar: Online
+                </p>
+                <AddToCalendar variant="link" />
+              </div>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">

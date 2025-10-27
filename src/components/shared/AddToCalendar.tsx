@@ -9,6 +9,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import type { VariantProps } from 'class-variance-authority';
+import { buttonVariants } from '@/components/ui/button';
 
 interface EventDetails {
   title: string;
@@ -18,7 +20,11 @@ interface EventDetails {
   endTime: Date;
 }
 
-export default function AddToCalendar() {
+type AddToCalendarProps = {
+    variant?: VariantProps<typeof buttonVariants>['variant'];
+}
+
+export default function AddToCalendar({ variant = 'default' }: AddToCalendarProps) {
   const [event, setEvent] = useState<EventDetails | null>(null);
   const [calendarLinks, setCalendarLinks] = useState({
     google: '#',
@@ -76,12 +82,13 @@ export default function AddToCalendar() {
     return null;
   }
 
+  const buttonSize = variant === 'link' ? 'default' : 'lg';
+  const buttonClassName = variant === 'link' ? 'text-accent p-0 h-auto' : 'bg-primary hover:bg-primary/90 text-primary-foreground';
+
   return (
-    <div className="mt-6">
-      <p className="text-muted-foreground mb-4">No te pierdas el evento. ¡Añádelo a tu calendario!</p>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+          <Button size={buttonSize} variant={variant} className={buttonClassName}>
             <CalendarPlus className="mr-2 h-5 w-5" />
             Añadir al Calendario
           </Button>
@@ -99,6 +106,5 @@ export default function AddToCalendar() {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    </div>
   );
 }
