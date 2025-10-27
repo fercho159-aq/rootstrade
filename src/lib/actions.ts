@@ -2,7 +2,6 @@
 
 import { z } from 'zod';
 import { redirect } from 'next/navigation';
-import { generateLandingPageTitles, GenerateLandingPageTitlesOutput } from '@/ai/flows/generate-landing-page-titles';
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -53,39 +52,4 @@ export async function registerForEvent(prevState: FormState, formData: FormData)
   console.log(`Email reminders scheduled for ${validatedFields.data.email}: 7 days and 24 hours before the event.`);
 
   redirect('/thank-you');
-}
-
-export type AITitleState = {
-  titles: string[];
-  error?: string;
-  message: string;
-}
-
-export async function suggestTitles(prevState: AITitleState, formData: FormData): Promise<AITitleState> {
-  const eventDescription = formData.get('eventDescription') as string;
-
-  if (!eventDescription || eventDescription.trim().length < 10) {
-    return {
-      ...prevState,
-      titles: [],
-      error: 'La descripción del evento debe tener al menos 10 caracteres.',
-      message: 'Error de validación',
-    };
-  }
-
-  try {
-    const result: GenerateLandingPageTitlesOutput = await generateLandingPageTitles({ eventDescription });
-    return {
-      titles: result.titles,
-      message: 'Sugerencias generadas con éxito.',
-    };
-  } catch (e) {
-    console.error(e);
-    return {
-      ...prevState,
-      titles: [],
-      error: 'No se pudieron generar los títulos. Por favor, inténtalo de nuevo.',
-      message: 'Error del servidor',
-    };
-  }
 }

@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
-import TitleSuggester from "./TitleSuggester";
+import Image from "next/image";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function Hero() {
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-image');
+
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-secondary/50">
       <div className="container px-4 md:px-6">
@@ -29,7 +32,16 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-             <TitleSuggester />
+             {heroImage && (
+                <Image
+                  src={heroImage.imageUrl}
+                  alt={heroImage.description}
+                  width={650}
+                  height={366}
+                  data-ai-hint={heroImage.imageHint}
+                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+                />
+              )}
           </div>
         </div>
       </div>
