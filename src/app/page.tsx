@@ -4,6 +4,7 @@ import Benefits from '@/components/landing/Benefits';
 import Registration from '@/components/landing/Registration';
 import Sponsors from '@/components/landing/Sponsors';
 import Footer from '@/components/landing/Footer';
+import Agenda from '@/components/landing/Agenda';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <Sponsors />
         <Benefits />
+        <Agenda />
         <Registration />
       </main>
       <Footer />
