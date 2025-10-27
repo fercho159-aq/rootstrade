@@ -13,7 +13,7 @@ export default function Hero() {
           <div className="flex flex-col justify-center space-y-6">
             <div className="space-y-4">
               <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-primary">
-                Desbloquea el Futuro del Comercio: Tu Viaje Comienza Aquí
+                RULES OF ORIGIN TRADE SOLUTIONS
               </h1>
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
                 Únete a nosotros en un evento exclusivo para descubrir estrategias innovadoras, conectar con líderes de la industria y transformar tu negocio.
