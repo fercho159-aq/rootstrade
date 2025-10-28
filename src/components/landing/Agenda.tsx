@@ -46,7 +46,7 @@ export default function Agenda() {
           {agendaItems.map((item, index) => (
             <div key={index} className="grid grid-cols-[80px_1fr] gap-4 items-start">
               <div className="text-right">
-                <p className="font-bold text-lg text-accent">{item.time}</p>
+                <p className="font-bold text-lg text-primary-foreground">{item.time}</p>
               </div>
               <div>
                 <h3 className="text-lg font-bold text-primary">{item.title}</h3>

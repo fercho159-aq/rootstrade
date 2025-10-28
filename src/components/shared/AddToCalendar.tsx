@@ -85,7 +85,7 @@ export default function AddToCalendar({ variant = 'default' }: AddToCalendarProp
 
   const buttonSize = 'lg';
   const buttonClassName = {
-      'link': 'text-accent p-0 h-auto hover:text-accent/90',
+      'link': 'text-primary-foreground p-0 h-auto hover:text-primary-foreground/90',
       'primary': 'bg-primary hover:bg-primary/90 text-primary-foreground',
       'secondary': 'bg-secondary hover:bg-secondary/80 text-secondary-foreground'
   }[variant || 'default']

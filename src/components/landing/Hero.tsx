@@ -20,7 +20,7 @@ export default function Hero() {
                 Únete a nosotros en un evento exclusivo para descubrir estrategias innovadoras, conectar con líderes de la industria y transformar tu negocio.
               </p>
               <div className="space-y-3">
-                <p className="text-accent font-semibold">
+                <p className="text-primary-foreground font-semibold">
                   Fecha: 25 de Diciembre, 2024 | Hora: 10:00 AM | Lugar: Online
                 </p>
                 <AddToCalendar variant="link" />
