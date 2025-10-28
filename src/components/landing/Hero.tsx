@@ -1,24 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import AddToCalendar from "@/components/shared/AddToCalendar";
 
 export default function Hero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-image');
-
   return (
     <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-white">
-       {heroImage && (
-        <Image
-          src="/images/sitio/headway-F2KRf_QfCqw-unsplash.jpg"
-          alt={heroImage.description}
-          fill
-          data-ai-hint={heroImage.imageHint}
-          className="object-cover object-center"
-          priority
-        />
-      )}
+      <Image
+        src="/images/sitio/headway-F2KRf_QfCqw-unsplash.jpg"
+        alt="Person writing on a whiteboard"
+        fill
+        data-ai-hint="collaboration meeting"
+        className="object-cover object-center"
+        priority
+      />
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative container px-4 md:px-6 text-center">
         <div className="flex flex-col justify-center space-y-6 items-center">
