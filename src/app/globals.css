@@ -11,13 +11,13 @@
     --popover: 0 0% 100%;
     --popover-foreground: 203 93% 26%;
     --primary: 203 93% 26%; /* #06517f */
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 38 65% 56%; /* #d7a547 */
     --secondary: 213 27% 92%;
     --secondary-foreground: 203 93% 26%;
     --muted: 213 27% 90%;
     --muted-foreground: 60 1% 44%;
-    --accent: 38 65% 56%; /* #d7a547 */
-    --accent-foreground: 203 93% 26%;
+    --accent: 190 99% 27%; /* #016e86 */
+    --accent-foreground: 38 65% 56%; /* #d7a547 */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 213 27% 88%;
@@ -33,13 +33,13 @@
     --popover: 220 10% 15%;
     --popover-foreground: 203 93% 76%;
     --primary: 203 93% 76%;
-    --primary-foreground: 203 93% 16%;
+    --primary-foreground: 38 65% 66%;
     --secondary: 220 10% 20%;
     --secondary-foreground: 203 93% 76%;
     --muted: 220 10% 20%;
     --muted-foreground: 60 1% 60%;
-    --accent: 38 65% 66%;
-    --accent-foreground: 203 93% 16%;
+    --accent: 190 99% 37%;
+    --accent-foreground: 38 65% 66%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 10% 25%;
@@ -59,9 +59,11 @@
 
 @layer components {
     .bg-accent {
-        background-color: #016e86 !important;
+        background-color: hsl(var(--accent));
+        color: hsl(var(--accent-foreground));
     }
     .hover\:bg-accent\/90:hover {
-        background-color: hsl(190 99% 30% / 0.9) !important;
+        background-color: hsl(var(--accent) / 0.9);
+        color: hsl(var(--accent-foreground));
     }
 }
