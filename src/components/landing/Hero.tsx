@@ -38,7 +38,7 @@ export default function Hero() {
           <div className="flex items-center justify-center">
              {heroImage && (
                 <Image
-                  src={heroImage.imageUrl}
+                  src="/images/sitio/headway-F2KRf_QfCqw-unsplash.jpg"
                   alt={heroImage.description}
                   width={650}
                   height={366}
