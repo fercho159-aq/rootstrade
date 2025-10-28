@@ -1,4 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import AddToCalendar from "@/components/shared/AddToCalendar";
+import { Button } from "../ui/button";
+import { MoveRight } from "lucide-react";
 
 const agendaItems = [
   {
@@ -55,6 +58,17 @@ export default function Agenda() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mt-12">
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <a href="#register">
+                  Asegura tu lugar
+                  <MoveRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+               <AddToCalendar variant="secondary" />
+            </div>
         </div>
       </div>
     </section>

@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import type { VariantProps } from 'class-variance-authority';
 import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 interface EventDetails {
   title: string;
@@ -82,13 +83,17 @@ export default function AddToCalendar({ variant = 'default' }: AddToCalendarProp
     return null;
   }
 
-  const buttonSize = variant === 'link' ? 'default' : 'lg';
-  const buttonClassName = variant === 'link' ? 'text-accent p-0 h-auto' : 'bg-primary hover:bg-primary/90 text-primary-foreground';
+  const buttonSize = 'lg';
+  const buttonClassName = {
+      'link': 'text-accent p-0 h-auto',
+      'primary': 'bg-primary hover:bg-primary/90 text-primary-foreground',
+      'secondary': 'bg-secondary hover:bg-secondary/80 text-secondary-foreground'
+  }[variant || 'default']
 
   return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button size={buttonSize} variant={variant} className={buttonClassName}>
+          <Button size={buttonSize} variant={variant} className={cn(buttonClassName)}>
             <CalendarPlus className="mr-2 h-5 w-5" />
             Añadir al Calendario
           </Button>
