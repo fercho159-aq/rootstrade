@@ -52,7 +52,7 @@ export default function Benefits() {
         </div>
         <div className="flex flex-col items-center justify-center space-y-4 text-center mt-12">
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button asChild size="lg">
                 <a href="#register">
                   Asegura tu lugar
                   <MoveRight className="ml-2 h-5 w-5" />

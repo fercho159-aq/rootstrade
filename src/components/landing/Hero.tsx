@@ -27,7 +27,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button asChild size="lg">
                 <a href="#register">
                   Asegura tu lugar
                   <MoveRight className="ml-2 h-5 w-5" />

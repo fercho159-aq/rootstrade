@@ -191,7 +191,7 @@ export default function RegistrationForm() {
           <p className="text-sm font-medium text-destructive">{state.message}</p>
         )}
 
-        <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" size="lg" disabled={isPending}>
+        <Button type="submit" className="w-full" size="lg" disabled={isPending}>
           {isPending ? (
             <>
               <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
