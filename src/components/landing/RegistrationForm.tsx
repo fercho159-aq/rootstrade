@@ -168,7 +168,7 @@ export default function RegistrationForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Estado (México) *</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select onValueChange={field.onChange} defaultValue={field.value || ""}>
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Selecciona tu estado" />
