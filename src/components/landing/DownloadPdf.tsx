@@ -14,7 +14,7 @@ export default function DownloadPdf() {
           </div>
           <div className="w-full max-w-4xl h-[70vh] rounded-lg overflow-hidden shadow-lg border">
             <iframe
-              src="/folleto-evento.pdf"
+              src="/ROOTS.pdf"
               className="w-full h-full"
               title="Folleto del Evento"
             />
