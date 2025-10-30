@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { registerForEvent, FormState } from '@/lib/actions';
-import { MEXICAN_STATES } from '@/lib/constants';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -17,13 +16,6 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import { LoaderCircle } from 'lucide-react';
 
 const phoneRegex = new RegExp(
@@ -168,20 +160,9 @@ export default function RegistrationForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Estado (México) *</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value || ""}>
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Selecciona tu estado" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  {MEXICAN_STATES.map((state) => (
-                    <SelectItem key={state} value={state}>
-                      {state}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <FormControl>
+                <Input placeholder="Escribe tu estado" {...field} />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}
