@@ -2,6 +2,7 @@
 
 import { z } from 'zod';
 import { redirect } from 'next/navigation';
+import { sendRegistrationEmail } from './email';
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -41,12 +42,19 @@ export async function registerForEvent(prevState: FormState, formData: FormData)
       errors: validatedFields.error.flatten().fieldErrors,
     };
   }
+  
+  try {
+    // This function now attempts to send the email.
+    await sendRegistrationEmail(validatedFields.data);
+  } catch (error) {
+    console.error('Email sending error:', error);
+    // You could return a specific error message to the user if the email fails.
+    return {
+        message: 'Hubo un problema al enviar la notificación por correo. Por favor, inténtalo más tarde.',
+        errors: {},
+    };
+  }
 
-  // Mock sending an email notification to the admin.
-  console.log('--- NUEVO REGISTRO ---');
-  console.log('Enviando notificación a comunicacion@roots.trade y fernandotrejo159@gmail.com');
-  console.log('Detalles del registro:', validatedFields.data);
-  console.log('------------------------');
 
   // Mock setting up email reminders.
   console.log(`Recordatorios por correo electrónico programados para ${validatedFields.data.email}: 7 días y 24 horas antes del evento.`);
