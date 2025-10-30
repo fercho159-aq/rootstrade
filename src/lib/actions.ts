@@ -44,7 +44,7 @@ export async function registerForEvent(prevState: FormState, formData: FormData)
 
   // Mock sending an email notification to the admin.
   console.log('--- NUEVO REGISTRO ---');
-  console.log('Enviando notificación a comunicacion@roots.trade');
+  console.log('Enviando notificación a comunicacion@roots.trade y fernandotrejo159@gmail.com');
   console.log('Detalles del registro:', validatedFields.data);
   console.log('------------------------');
 
