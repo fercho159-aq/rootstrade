@@ -43,13 +43,13 @@ export async function registerForEvent(prevState: FormState, formData: FormData)
   }
 
   // Mock sending an email notification to the admin.
-  console.log('--- NEW REGISTRATION ---');
-  console.log('Sending notification to comunicacion@roots.trade');
-  console.log('Registration details:', validatedFields.data);
+  console.log('--- NUEVO REGISTRO ---');
+  console.log('Enviando notificación a comunicacion@roots.trade');
+  console.log('Detalles del registro:', validatedFields.data);
   console.log('------------------------');
 
   // Mock setting up email reminders.
-  console.log(`Email reminders scheduled for ${validatedFields.data.email}: 7 days and 24 hours before the event.`);
+  console.log(`Recordatorios por correo electrónico programados para ${validatedFields.data.email}: 7 días y 24 horas antes del evento.`);
 
   redirect('/thank-you');
 }
