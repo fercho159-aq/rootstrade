@@ -26,7 +26,7 @@ type RegistrationData = z.infer<typeof registrationDataSchema>;
 *    You will need to add some DNS records provided by Resend.
 * 4. Replace 'from: 'onboarding@resend.dev'' with your verified domain email, e.g., 'from: 'notificaciones@yourdomain.com''
 */
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend('re_bu7CND5Y_CEUNmoQt5ZYNV18C5ZbN7wFa');
 
 export async function sendRegistrationEmail(data: RegistrationData) {
   const validatedData = registrationDataSchema.parse(data);
