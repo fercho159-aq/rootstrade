@@ -2,7 +2,6 @@ import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
 import Benefits from '@/components/landing/Benefits';
 import Registration from '@/components/landing/Registration';
-import Sponsors from '@/components/landing/Sponsors';
 import Footer from '@/components/landing/Footer';
 import Agenda from '@/components/landing/Agenda';
 
@@ -12,7 +11,6 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Sponsors />
         <Benefits />
         <Agenda />
         <Registration />
