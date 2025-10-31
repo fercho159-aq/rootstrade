@@ -3,8 +3,6 @@
 import { Resend } from 'resend';
 import { z } from 'zod';
 
-// You can't use the formSchema directly from actions.ts because of the 'use server' directive.
-// It's better to redefine the schema for the data you expect here.
 const registrationDataSchema = z.object({
   firstName: z.string(),
   lastName: z.string(),
@@ -17,16 +15,8 @@ const registrationDataSchema = z.object({
 
 type RegistrationData = z.infer<typeof registrationDataSchema>;
 
-/*
-* IMPORTANT: To complete this implementation, you need to:
-* 1. Sign up for Resend (https://resend.com) and get your API key.
-* 2. Add your API key as an environment variable named RESEND_API_KEY.
-*    In Vercel, you'll add this in your project's Environment Variables settings.
-* 3. Verify your domain with Resend to be able to send emails from your own domain.
-*    You will need to add some DNS records provided by Resend.
-* 4. Replace 'from: 'onboarding@resend.dev'' with your verified domain email, e.g., 'from: 'notificaciones@yourdomain.com''
-*/
 const resend = new Resend('re_bu7CND5Y_CEUNmoQt5ZYNV18C5ZbN7wFa');
+const FROM_EMAIL = 'registro@rulesoforigin.roots.trade';
 
 export async function sendRegistrationEmail(data: RegistrationData) {
   const validatedData = registrationDataSchema.parse(data);
@@ -34,25 +24,10 @@ export async function sendRegistrationEmail(data: RegistrationData) {
   const { firstName, lastName, secondLastName, email, phone, company, state } = validatedData;
   const adminEmailList = ['comunicacion@roots.trade', 'fernandotrejo159@gmail.com'];
   
-  console.log('--- SIMULATING EMAIL ---');
-  console.log('To:', adminEmailList.join(', '));
-  console.log('Subject: Nuevo Registro para el Evento');
-  console.log('Body:', `
-    Se ha registrado un nuevo participante:
-    Nombre: ${firstName} ${lastName} ${secondLastName || ''}
-    Email: ${email}
-    Teléfono: ${phone}
-    Empresa: ${company}
-    Estado: ${state}
-  `);
-  console.log('------------------------');
-
-
-  // When you have your API key, uncomment the following block to send real emails.
-  /*
   try {
-    const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev', // Replace with your verified domain email
+    // Send notification email to admins
+    await resend.emails.send({
+      from: FROM_EMAIL,
       to: adminEmailList,
       subject: 'Nuevo Registro para el Evento ROOTS',
       html: `
@@ -68,19 +43,33 @@ export async function sendRegistrationEmail(data: RegistrationData) {
       `,
     });
 
-    if (error) {
-      console.error('Resend Error:', error);
-      throw new Error('Failed to send notification email.');
-    }
+    // Send confirmation email to the user
+    await resend.emails.send({
+      from: FROM_EMAIL,
+      to: [email],
+      subject: '¡Gracias por registrarte al evento de ROOTS!',
+      html: `
+        <h1>¡Confirmación de Registro!</h1>
+        <p>Hola ${firstName},</p>
+        <p>Gracias por registrarte a nuestro evento "RULES OF ORIGIN TRADE SOLUTIONS".</p>
+        <p>Hemos recibido tu información y tu lugar está asegurado. Recibirás recordatorios a medida que se acerque la fecha del evento.</p>
+        <p><strong>Fecha:</strong> 25 de Diciembre, 2024</p>
+        <p><strong>Hora:</strong> 10:00 AM (Hora de CDMX)</p>
+        <p><strong>Lugar:</strong> Online</p>
+        <p>¡Esperamos verte pronto!</p>
+        <br>
+        <p>Saludos,</p>
+        <p>El equipo de RULES OF ORIGIN TRADE SOLUTIONS</p>
+      `,
+    });
 
-    console.log('Email sent successfully:', data);
-    return data;
   } catch (exception) {
     console.error('Exception sending email:', exception);
+    // Even if emails fail, for now we will let the user proceed.
+    // In a real-world scenario, you might want to handle this more gracefully.
+    // For this implementation, we throw an error to make it visible during development.
     throw new Error('An unexpected error occurred while sending the email.');
   }
-  */
 
-  // This Promise simulates the network request for now.
   return Promise.resolve();
 }
