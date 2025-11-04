@@ -3,6 +3,7 @@ import Hero from '@/components/landing/Hero';
 import Registration from '@/components/landing/Registration';
 import Footer from '@/components/landing/Footer';
 import Banners from '@/components/landing/Banners';
+import MoreInfo from '@/components/landing/MoreInfo';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Banners />
+        <MoreInfo />
         <Registration />
       </main>
       <Footer />
