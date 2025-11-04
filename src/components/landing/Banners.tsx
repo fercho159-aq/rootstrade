@@ -5,21 +5,23 @@ export default function Banners() {
     <section className="bg-background">
       <div className="container py-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="relative aspect-[2/1] w-full">
+          <div className="relative w-full">
             <Image
-              src="/images/banners/banner-1-placeholder.jpg"
+              src="/images/WhatsApp Image 2025-11-04 at 07.08.25.jpeg"
               alt="Banner 1"
-              fill
-              className="object-cover rounded-md"
+              width={1080}
+              height={1080}
+              className="object-contain rounded-md w-full h-auto"
               data-ai-hint="promotional banner"
             />
           </div>
-          <div className="relative aspect-[2/1] w-full">
+          <div className="relative w-full">
             <Image
-              src="/images/banners/banner-2-placeholder.jpg"
+              src="/images/WhatsApp Image 2025-11-04 at 07.08.46.jpeg"
               alt="Banner 2"
-              fill
-              className="object-cover rounded-md"
+              width={1080}
+              height={1080}
+              className="object-contain rounded-md w-full h-auto"
               data-ai-hint="event details"
             />
           </div>
