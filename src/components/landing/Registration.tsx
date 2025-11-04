@@ -10,7 +10,7 @@ export default function Registration() {
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-bold font-headline">Regístrate Ahora</CardTitle>
               <CardDescription>
-                Los lugares son limitados. Completa el formulario para asegurar tu participación en este evento transformador.
+                Los lugares son limitados. Completa el formulario para asegurar tu participación en este evento.
               </CardDescription>
             </CardHeader>
             <CardContent>
