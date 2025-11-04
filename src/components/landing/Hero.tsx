@@ -26,7 +26,7 @@ export default function Hero() {
               </p>
               <div className="space-y-3">
                 <p className="font-semibold text-amber-300">
-                  Fecha: 25 de Diciembre, 2024 | Hora: 10:00 AM | Lugar: Online
+                  Fecha: 20 de Noviembre, 2025 | Hora: 18:30 | Lugar: Edificio CANAME
                 </p>
                 <AddToCalendar variant="link" />
               </div>

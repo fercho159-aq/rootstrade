@@ -35,13 +35,13 @@ export default function AddToCalendar({ variant = 'default' }: AddToCalendarProp
   useEffect(() => {
     // Event details should be fetched or passed, but we'll hardcode them here.
     // Using useEffect to ensure Date objects are only created on the client.
-    const startTime = new Date('2024-12-25T16:00:00Z'); // 10:00 Mexico City time (UTC-6)
-    const endTime = new Date('2024-12-25T18:00:00Z'); // 12:00 Mexico City time (UTC-6)
+    const startTime = new Date('2025-11-21T00:30:00Z'); // 18:30 Mexico City time (UTC-6)
+    const endTime = new Date('2025-11-21T02:30:00Z'); // 20:30 Mexico City time (UTC-6), assuming 2 hours duration
 
     const eventDetails: EventDetails = {
       title: 'Evento Exclusivo Roots.trade',
       description: 'Descubre estrategias innovadoras, conecta con líderes de la industria y transforma tu negocio. Enlace de acceso: [Link del evento]',
-      location: 'Online',
+      location: 'Edificio CANAME',
       startTime,
       endTime,
     };

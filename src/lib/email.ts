@@ -53,9 +53,9 @@ export async function sendRegistrationEmail(data: RegistrationData) {
         <p>Hola ${firstName},</p>
         <p>Gracias por registrarte a nuestro evento "RULES OF ORIGIN TRADE SOLUTIONS".</p>
         <p>Hemos recibido tu información y tu lugar está asegurado. Recibirás recordatorios a medida que se acerque la fecha del evento.</p>
-        <p><strong>Fecha:</strong> 25 de Diciembre, 2024</p>
-        <p><strong>Hora:</strong> 10:00 AM (Hora de CDMX)</p>
-        <p><strong>Lugar:</strong> Online</p>
+        <p><strong>Fecha:</strong> 20 de Noviembre, 2025</p>
+        <p><strong>Hora:</strong> 18:30 (Hora de CDMX)</p>
+        <p><strong>Lugar:</strong> Edificio CANAME</p>
         <p>¡Esperamos verte pronto!</p>
         <br>
         <p>Saludos,</p>
