@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { MoveRight } from "lucide-react";
 import AddToCalendar from "@/components/shared/AddToCalendar";
 
 export default function Hero() {
@@ -20,14 +18,6 @@ export default function Hero() {
                 </p>
                 <AddToCalendar variant="link" />
               </div>
-            </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button asChild size="lg">
-                <a href="#register">
-                  Asegura tu lugar
-                  <MoveRight className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
             </div>
           </div>
       </div>
