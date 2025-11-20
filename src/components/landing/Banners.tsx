@@ -4,7 +4,7 @@ export default function Banners() {
   return (
     <section className="bg-background">
       <div className="container py-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 place-items-center">
           <div className="relative w-full">
             <Image
               src="/images/WhatsApp Image 2025-11-04 at 07.08.25.jpeg"
